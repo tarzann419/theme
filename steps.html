@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add custom CSS for connecting lines */
+        .step-line {
+            position: absolute;
+            width: 2px;
+            background-color: #007bff; /* Blue color for lines */
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2>Registration</h2>
+            <div class="progress">
+                <div class="progress-bar" style="width: 25%;"></div>
+            </div>
+
+            <!-- Step 1: User Information -->
+            <div class="step" id="step1">
+                <h3>Step 1: User Information</h3>
+                <form>
+                    <!-- Form fields for user information -->
+                </form>
+                <button class="btn btn-primary" onclick="nextStep(2)">Next</button>
+            </div>
+
+            <!-- Step 2: Account Setup -->
+            <div class="step" id="step2">
+                <h3>Step 2: Account Setup</h3>
+                <form>
+                    <!-- Form fields for account setup -->
+                </form>
+                <button class="btn btn-primary" onclick="nextStep(3)">Next</button>
+            </div>
+
+            <!-- Step 3: Profile Information -->
+            <div class="step" id="step3">
+                <h3>Step 3: Profile Information</h3>
+                <form>
+                    <!-- Form fields for profile information -->
+                </form>
+                <button class="btn btn-primary" onclick="nextStep(4)">Next</button>
+            </div>
+
+            <!-- Step 4: Confirmation -->
+            <div class="step" id="step4">
+                <h3>Step 4: Confirmation</h3>
+                <p>Review your information and confirm.</p>
+                <button class="btn btn-success">Confirm</button>
+            </div>
+
+            <!-- Add connecting lines between steps -->
+            <div class="step-line" style="top: 50px; left: 50%;">
+                <div style="height: 100px;"></div>
+            </div>
+            <div class="step-line" style="top: 50px; left: 50%;">
+                <div style="height: 100px;"></div>
+            </div>
+            <div class="step-line" style="top: 50px; left: 50%;">
+                <div style="height: 100px;"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentStep = 1;
+
+    function nextStep(step) {
+        document.getElementById(`step${currentStep}`).style.display = "none";
+        document.getElementById(`step${step}`).style.display = "block";
+        currentStep = step;
+    }
+</script>
+</body>
+</html>
